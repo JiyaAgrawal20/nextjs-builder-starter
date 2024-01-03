@@ -44,3 +44,34 @@ Builder.registerComponent(
     ],
   }
 );
+
+Builder.registerComponent(
+  dynamic(
+    async () => (await import("./components/builder")).RenderBuilderContent
+  ),
+  {
+    name: "RenderBuilderContent",
+    inputs: [
+      {
+        name: "content",
+        type: "string",
+      },
+    ],
+  }
+);
+
+Builder.registerComponent(
+  dynamic(
+    async () =>
+      (await import("./components/builder-section")).RenderBuilderSection
+  ),
+  {
+    name: "RenderBuilderSection",
+    inputs: [
+      {
+        name: "content",
+        type: "string",
+      },
+    ],
+  }
+);
